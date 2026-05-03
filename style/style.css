@@ -124,14 +124,13 @@ main {
 }
 
 footer {
-    background-color: #000000;
+    background-color: #101010;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30px;
     color: #ffffff;
-    border-top: 2px solid rgba(255, 0, 0, 0.5);
 }
 
 footer p {
