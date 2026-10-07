@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -125,12 +129,15 @@ main {
 
 footer {
     background-color: #101010;
+    border-top: 2px solid rgba(255, 0, 0, 0.5);
     padding: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 30px;
+    gap: 6px;
     color: #ffffff;
+    font-family: 'Raleway', sans-serif;
 }
 
 footer p {
@@ -251,4 +258,215 @@ section {
 .streamings .iframes {
     display: flex;
     justify-content: center;
+}
+
+/* Responsivo */
+.streamings .iframes {
+    flex-wrap: wrap;
+}
+
+.streamings iframe {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Melhorias */
+.capa-breve {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 2px dashed rgba(255, 0, 0, 0.7);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ff0000;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.hero .capa-breve {
+    width: 250px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.streamings .aviso a {
+    color: #ff0000;
+}
+
+a:focus-visible {
+    outline: 2px solid #ff0000;
+    outline-offset: 3px;
+}
+
+.albuns-container .album .ano {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    color: #ff0000;
+}
+
+.fatos {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.fatos li {
+    flex: 1 1 120px;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.fatos strong {
+    display: block;
+    font-size: 24px;
+    color: #ff0000;
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 800px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid rgba(255, 0, 0, 0.5);
+    font-family: 'Raleway', sans-serif;
+}
+
+.navegacao a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.navegacao a:hover {
+    color: #ff0000;
+}
+
+.navegacao a:last-child {
+    text-align: right;
+}
+
+.tracklist li::marker {
+    color: #ff0000;
+}
+
+@media (max-width: 900px) {
+    main {
+        padding: 50px 30px;
+    }
+
+    .albuns-container {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        justify-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: 40px;
+        padding: 10px;
+    }
+
+    header img {
+        width: 180px;
+    }
+
+    main {
+        margin-top: 60px;
+        padding: 30px 20px;
+    }
+
+    section {
+        max-width: 100%;
+    }
+
+    .home {
+        font-size: 17px;
+    }
+
+    .home h1,
+    .albuns h2,
+    .descricao h2,
+    .tracklist h2,
+    .streamings h2 {
+        font-size: 30px;
+    }
+
+    .albuns-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .albuns-container .album {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .botao-voltar {
+        font-size: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .hero img,
+    .hero .capa-breve {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .hero .textos h1 {
+        font-size: 30px;
+    }
+
+    .descricao,
+    .tracklist,
+    .streamings {
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+
+    .descricao .textos {
+        text-align: left;
+    }
+
+    .tracklist ol {
+        columns: 1;
+    }
+
+    .tracklist li {
+        font-size: 17px;
+    }
+
+    .streamings iframe {
+        width: 100% !important;
+    }
+
+    footer {
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .navegacao {
+        flex-direction: column;
+    }
+
+    .navegacao a:last-child {
+        text-align: left;
+    }
 }
